@@ -63,7 +63,7 @@ const displaynews = news => {
        </div >
     `;
         i++;
-        newsContainer.appendChild(newsDiv);
+        newsContainer.appendChild(newsdiv);
 
     })
 
@@ -87,8 +87,8 @@ const loadModal = async (id) => {
 const displaynewsDetails = (modals) => {
     console.log(modals);
     console.log(modals[0].title);
-    const modalTitle = document.getElementById("pModalLabel");
-    modalTitle.innerText = modals[0].title;
+    const ModalTitle = document.getElementById("pModalLabel");
+    ModalTitle.innerText = modals[0].title;
     const phoneDetails = document.getElementById('pdetails');
     phoneDetails.innerHTML = `
     <img src="${modals[0].thumbnail_url}" class="card-img-top img-fluid" alt="...">
