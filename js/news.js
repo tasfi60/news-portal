@@ -12,7 +12,7 @@ const loadnews = async (id) => {
 //spinner-function 
 
 const toggleSpinner = isLoading => {
-    const loaderSection = document.getElementById('loader');
+    const loaderSection = document.getElementById('loading');
     if (isLoading) {
         loaderSection.classList.remove('d-none')
         console.log("spinner done");
@@ -27,7 +27,7 @@ const toggleSpinner = isLoading => {
 
 const displaynews = news => {
     console.log(news);
-    const totalNews = document.getElementById("total-news");
+    const totalNews = document.getElementById("news-sec");
     totalNews.innerText = news.length;
 
     // debugging
