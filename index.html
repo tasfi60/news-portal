@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News-Times</title>
+    <script src="https://kit.fontawesome.com/1ec4934975.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!------- header section starts here-->
+    <header class="container">
+        <!-- nav-bar section starts -->
+        <section class="nav-section">
+            <nav class="navbar navbar-expand-lg bg-light">
+                <div class="container">
+                    <a class="navbar-brand fs-2 fw-bold text-white gap-5" href="#">
+                        <span class="bg-primary text-white border border-primary rounded px-3 py-1"> Daily Info</span>
+                        <span style="color: #5D5FEF;">Station</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 px-5 gap-4">
+                            <li class="nav-item">
+                                <a class="nav-link fs-5 text-primary fw-bold" aria-current="page" href="index.html"
+                                    onclick="loadCategories()">News</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fs-5 text-secondary" href="blog.html">Blog</a>
+                            </li>
+
+                    </div>
+                </div>
+            </nav>
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center border-bottom">
+            </div>
+        </section>
+        <!-- nav-bar section ends -->
+    </header>
+    <main>
+        <section class="container mt-3">
+            <div id="categories-container" class="">
+                <a class="fw-bold px-3 fs-5 text-secondary text-decoration-none">Home</a>
+            </div>
+        </section>
+
+        <section class="container mt-3">
+            <div class="">
+                <p class="text-4xl text-center"> <span id="total-news" class="text-blue-500"></span> items found for
+                    category <span id="news-name" class="text-blue-500"></span>
+                </p>
+            </div>
+        </section>
+
+        <section class="container mt-3">
+            <div id="news-container" class="row row-cols-1 g-4">
+            </div>
+        </section>
+    </main>
+
+    <script src="categories.js"></script>
+    <script src="news.js"></script>
+
+
+</body>
+
+</html>
