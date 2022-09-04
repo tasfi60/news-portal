@@ -12,21 +12,21 @@ const loadnews = async (id) => {
 
 const displaynews = news => {
     console.log(news);
-    const totalNews = document.getElementById("all-news");
-    totalNews.innerText = news.length;
+    const tNews = document.getElementById("all-news");
+    tNews.innerText = news.length;
     const newsContainer = document.getElementById('all news-container');
-
     newsContainer.innerHTML = ``;
+
 
     news.forEach(single => {
         console.log(single);
         let i = 0;
-        let txt1 = "0";
-        let cnt = 1;
+        let text1 = "0";
+        let c = 1;
         const newsDiv = document.createElement('div');
         newsDiv.classList.add('col');
-        txt2 = cnt.toString();
-        let result = txt1.concat(txt2);
+        txt2 = c.toString();
+        let result = text1.concat(txt2);
         newsDiv.innerHTML = `
         
    <div class="col-12 col-lg-12 col-sm-12">
@@ -95,6 +95,5 @@ const displaynewsDetails = (modals) => {
     <p class ="mt-5"> <span class ="fw-bold fs-5"> Details : </span> ${modals[0].details ? modals[0].details : 'No details Found'}</p>
     <p><span class ="fw-bold fs-5"> Author name: </span> ${modals[0].author.name ? modals[0].author.name : 'No author Found'}</p>
     `
-    //  modalTitle.innerText = modals.title;
 };
 

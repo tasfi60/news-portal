@@ -26,10 +26,7 @@ const displayCategories = categories => {
         categoriesContainerDiv.innerHTML = `
         <a class="fw-bold px-3 fs-5 text-secondary text-decoration-none" onclick ="loadnews('${result}')">${category.category_name}</a>
             `;
-        //console.log(category.category_name);
-        // const nname = category.category_name;
-
-        // console.log(nname);
+        
 
         categoriesContainer.appendChild(categoriesContainerDiv);
         cnt++;
