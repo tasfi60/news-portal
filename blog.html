@@ -5,115 +5,197 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
-
+    <!-- title-bar -->
+    <title>Daily Info Station Blog</title>
+    <!-- fontawesome-for-icons -->
+    <script src="https://kit.fontawesome.com/1ec4934975.js" crossorigin="anonymous"></script>
+    <!-- custom-css-stylesheet -->
+    <link rel="stylesheet" href="style/style.css">
+    <!-- bootstrap-css-stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <nav class="px-2 sm:px-4 py-2.5 rounded">
-            <div class="container flex flex-wrap justify-between items-center mx-auto">
-                <p><b><span class="text-orange-500">News </span>and Views</p></b>
-                <div class="flex items-center md:order-2">
-                    <img class="w-8 h-8 rounded-full" src="images/Avatar.png">
+    <!-- header section starts -->
+    <header class="container">
+        <!-- nav-bar section starts -->
+        <section class="nav-section">
+            <nav class="navbar navbar-expand-lg bg-light">
+                <div class="container">
+                    <a class="navbar-brand fs-2 fw-bold text-white gap-5" href="index.html">
+                        <span class="bg-primary text-white border border-primary rounded px-3 py-1">
+                            Daily Info</span>
+                        <span style="color: #5D5FEF;">Station</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 px-5 gap-4">
+                            <li class="nav-item">
+                                <a class="nav-link fs-5 text-secondary" href="index.html"
+                                    onclick="loadCategories()">News</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fs-5 text-primary fw-bold" aria-current="page"
+                                    href="blog.html">Blog</a>
+                            </li>
+
+                    </div>
                 </div>
-                <div class="ml-96 items-center w-full md:flex md:w-auto md:order-1 sm:d-flex " id="mobile-menu-2">
-                    <ul
-                        class="flex flex-col  p-4 mt-4 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
-                        <a href="index.html" class="block p-2 ml-64 text-gray-700 rounded hover:bg-purple-500">News</a>
-                        <a href="#" class="block p-2 text-gray-700 rounded hover:bg-sky-500"
-                            style="background-color:rgb(176, 246, 251); cursor:pointer;">Blog</a>
-                    </ul>
-                </div>
+            </nav>
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center border-bottom">
             </div>
-            <hr>
-        </nav>
+        </section>
+        <!-- nav-bar section ends -->
     </header>
+    <!-- header section ends -->
 
-    <!-- accordion  section starts here  -->
+    <!-- main section starts -->
     <main>
-        <div id="accordion-collapse" data-accordion="collapse">
-            <h2 id="accordion-collapse-heading-1">
-                <button type="button"
-                    class="flex items-center justify-between w-full p-5 font-medium text-left border border-b-0 border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800  text-gray-900 dark:text-white"
-                    data-accordion-target="#accordion-collapse-body-1" aria-expanded="true"
-                    aria-controls="accordion-collapse-body-1">
-                    <span>Difference among Var,Let and Const?</span>
-                    <svg data-accordion-icon="" class="w-6 h-6 rotate-180 shrink-0" fill="currentColor"
-                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                </button>
-            </h2>
-            <div id="accordion-collapse-body-1" class="" aria-labelledby="accordion-collapse-heading-1">
-                <div class="p-5 font-light border border-b-0 border-gray-200 dark:border-gray-700 ">
-                    <p class="mb-2 text-gray-500 text-slate-900"> <span class="text-orange-500">Var</span> The scope of a var variable is functional scope.It can be updated and re-declared into the scope.It can be declared without initialization.;
-                        <br>
-                        <span class="text-orange-500">Let</span> The scope of a let variable is block scope.It can be updated but cannot be re-declared into the scope.It can be declared without initialization.; <br>
-                        <span class="text-orange-500">Const</span> The scope of a const variable is block scope.It cannot be updated or re-declared into the scope.It cannot be declared without initialization.
-                    </p>
-                </div>
+        <!-- FAQ part starts -->
+        <section class="faq container mt-5">
+            <div class="faq-header text-center">
+                <h1 class="display-5 fw-bold">Frequently Asked Questions
+                </h1>
+                <p class="fs-5 text-secondary text-wrap text-center">Here is the list of most commonly asked web
+                    development interview questions for freshers and experienced candidates.</p>
             </div>
+            <section class="faq-body mt-5">
+                <div class="accordion" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                            <button class="accordion-button fw-bold text-black fs-4" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne"
+                                aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                What is the difference among var,let and const?
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                            aria-labelledby="panelsStayOpen-headingOne">
+                            <div class="accordion-body">
+                                <h6 class="text-muted">
+                                    <ul>
+                                        <li><b> var - </b> var declarations
+                                            are globally scoped or function scoped while let and const are block scoped.
+                                            Var
+                                            variables can
+                                            be updated and re-declared within its scope
+                                        </li>
 
+                                        <li><b> let - </b> let variables can be updated but not
+                                            re-declared
+                                        </li>
+                                        <li><b> const - </b>const variables can neither be updated nor
+                                            re-declared.
+                                        </li>
+                                    </ul>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                            <button class="accordion-button fw-bold text-black fs-4 collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo"
+                                aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                What is the difference between Arrow function and Regular function?
+                            </button>
 
-            <h2 id="accordion-collapse-heading-2">
-                <button type="button"
-                    class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200  dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800"
-                    data-accordion-target="#accordion-collapse-body-2" aria-expanded="false"
-                    aria-controls="accordion-collapse-body-2">
-                    <span>Difference between Arrow and Regular Function?</span>
-                    <svg data-accordion-icon="" class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                </button>
-            </h2>
-            <div id="accordion-collapse-body-2" class="hidden" aria-labelledby="accordion-collapse-heading-2">
-                <div class="p-5 font-light border border-b-0 border-gray-200 dark:border-gray-700">
-                    <p class="mb-2 text-gray-500 text-slate-900">
-                        <span class="text-orange-500">In regular function </span> Inside of a regular JavaScript function, this value (aka the execution context) is dynamic.The dynamic context means that the value of this depends on how the function is invoked. In JavaScript, there are 4 ways you can invoke a regular function.
-                        The regular function can easily construct objects.
-                        <br>
-                        <span class="text-orange-500">Arrow</span> The behavior of this inside of an arrow function differs considerably from the regular function's this behavior. The arrow function doesn't define its own execution context.No matter how or where being executed, this value inside of an arrow function always equals this value from the outer function. In other words, the arrow function resolves this lexically.
-                        A consequence of this resolved lexically is that an arrow function cannot be used as a constructor.
-                    </p>
+                        </h2>
+                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingTwo">
+                            <div class="accordion-body">
+                                <h6 class="text-muted">
+                                    <ul>
+                                        <li><b> Arrow function - </b> Arrow functions – a new feature introduced in ES6
+                                            – enable writing concise functions in JavaScript. While both regular and
+                                            arrow functions work in a similar manner, yet there are certain interesting
+                                            differences between them, as discussed below.
+                                            Arrow functions behave in the same way as regular functions when returning
+                                            values.
+                                            If the arrow function contains one expression, you can omit the curly
+                                            braces, and then the expression will be implicitly returned.
+                                        </li>
+
+                                        <li><b> Regular function - </b> In regular function, you have to use return
+                                            keyword to return any value. If you don’t return anything then the function
+                                            will return undefined.
+                                        </li>
+
+                                    </ul>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                            <button class="accordion-button fw-bold text-black fs-4 collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree"
+                                aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                What is the difference among Map,ForEach, Filter and Find ?
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingThree">
+                            <div class="accordion-body">
+                                <h6 class="text-muted">
+                                    <ul>
+                                        <li><b>Map and forEach - </b>The main difference between map and forEach is that
+                                            the map
+                                            method returns a new array by applying the callback function on each element
+                                            of an array, while the forEach method doesn't return anything.
+                                        </li>
+                                        <li><b>forEach and filter -</b>The main difference between forEach and filter is
+                                            that
+                                            forEach just loop over the
+                                            array
+                                            and executes the callback but filter executes the callback and check its
+                                            return
+                                            value.
+                                        </li>
+                                        <li><b>filter and find -</b> The filter() method is used to filters all the
+                                            elements and
+                                            returns the element that matches and the element that do not match are
+                                            removed. The only difference is the filter() method search through all the
+                                            elements while find() method search through all the child elements only.
+                                        </li>
+                                        <li><b>map and find - </b> map() goes through all entries then creates a new
+                                            array
+                                            using the
+                                            function supplied. . find() locates a specific entry by a predicate and
+                                            returns it.</li>
+                                    </ul>
+
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-
-            <h2 id="accordion-collapse-heading-3">
-                <button type="button"
-                    class="flex items-center justify-between w-full p-5 font-bold text-left border border-gray-200 dark:border-gray-700  hover:bg-gray-100 dark:hover:bg-gray-800"
-                    data-accordion-target="#accordion-collapse-body-3" aria-expanded="false"
-                    aria-controls="accordion-collapse-body-3">
-                    <span>Difference among Map , ForEach, Filter and Find ?</span>
-                    <svg data-accordion-icon="" class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                </button>
-            </h2>
-            <div id="accordion-collapse-body-3" class="hidden" aria-labelledby="accordion-collapse-heading-3">
-                <div class="p-5 font-light border border-t-0 border-gray-200 dark:border-gray-700">
-                    <p class="mb-2 text-gray-500 text-slate-900"><span class="text-orange-500">Map :</span>It is used when you want to transform elements in an array. <span class="text-orange-500"> forEach :</span>forEach just loop over the array and executes the callback. <span class="text-orange-500"> filter :</span> It is used when you want to select a subset of multiple elements from an array. <span class="text-orange-500"> find :</span> It is used When you want to select a single element from an array.</p>
-                    
-                </div>
-            </div>
-        </div>
-
-        <!-- accordion  section ends here  -->
-
+            </section>
+        </section>
+        <!-- FAQ part ends -->
     </main>
+    <!-- main section starts -->
 
-    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+    <!-- footer-section-starts -->
+    <section class="footer-sec mt-5">
+        <footer class=" text-center ">
+            <div class="container-fluid py-4 bg-light bg-gradient">
+                <p class="mt-5 text-secondary  fw-bold fs-5">
+                    Copyright @ 2022 All Rights Reserved.
+                </p>
+            </div>
+        </footer>
+    </section>
+    <!-- footer-section-ends -->
+
+    <!-- js cdns -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
 </body>
 
 </html>
