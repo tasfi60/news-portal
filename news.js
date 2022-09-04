@@ -23,11 +23,11 @@ const displaynews = news => {
         let i = 0;
         let text1 = "0";
         let c = 1;
-        const newsDiv = document.createElement('div');
-        newsDiv.classList.add('col');
+        const newsdiv = document.createElement('div');
+        newsdiv.classList.add('col');
         txt2 = c.toString();
         let result = text1.concat(txt2);
-        newsDiv.innerHTML = `
+        newsdiv.innerHTML = `
         
    <div class="col-12 col-lg-12 col-sm-12">
         <div class="card">
