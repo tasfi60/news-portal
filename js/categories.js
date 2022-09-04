@@ -1,6 +1,6 @@
 // load news category function
 
-const loadCategories = () => {
+const loadCat = () => {
     fetch('https://openapi.programming-hero.com/api/news/categories')
         .then(res => res.json())
         .then(data => displayCategories(data.data.news_category))
@@ -16,7 +16,7 @@ const displayCategories = categories => {
     // const newsName = document.getElementById("news-name");
     // newsName.innerHTML = `${categories[cnt1].category_name}`;
 
-    const categoriesContainer = document.getElementById('categories-container');
+    const categoriesContainer = document.getElementById('cat-container');
     let txt1 = "0";
     let cnt = 1;
 
@@ -47,6 +47,6 @@ const displayCategories = categories => {
 }
 
 // automatically show news category from api files
-loadCategories();
+loadCat();
 
 
