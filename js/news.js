@@ -1,85 +1,82 @@
-// loadnews for specific news category
-const loadnews = async (id) => {
-    // console.log(id);
-    const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
-    // console.log(url);
 
+
+
+
+// loading news for each news category
+const loadnews = async (id) => {
+    const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
     fetch(url)
         .then(res => res.json())
-        .then(data => displaynews(data.data))
+        .then(data => displayallnews(data.data))
 
 }
-//spinner-function 
+
+
+
+
+//spinner function 
 
 const toggleSpinner = isLoading => {
-    const loaderSection = document.getElementById('loading');
+    const loadingSection = document.getElementById('loading');
     if (isLoading) {
-        loaderSection.classList.remove('d-none')
+        loadingSection.classList.remove('d-none')
         console.log("spinner done");
     }
     else {
-        loaderSection.classList.add('d-none');
+        loadingSection.classList.add('d-none');
     }
 }
 
 
-// displaynews for specific news category
 
-const displaynews = news => {
+
+
+// displaynews each news category
+
+const displayallnews = news => {
     console.log(news);
-    const totalNews = document.getElementById("news-sec");
-    totalNews.innerText = news.length;
-
-    // debugging
-
-    // const totalNews = news.length;
-    //console.log(news.data);
-    // console.log(news[0].author.name);
-    // console.log(news[0].author.img);
-
-    // console.log(news[0].thumbnail_url);
-    // console.log(news[0].rating.number);
-    // console.log(news[0].title);
-    // console.log(news[0].details);
+    const allNews = document.getElementById("news-sec");
+    allNews.innerText = news.length;
 
 
-    const newsContainer = document.getElementById('news-container');
+
+
+    const newsContainer = document.getElementById('newsContainer');
 
     newsContainer.innerHTML = ``;
 
-    news.forEach(single => {
-        console.log(single);
+    news.forEach(individual => {
+        console.log(individual);
         let i = 0;
         let txt1 = "0";
-        let cnt = 1;
+        let c = 1;
 
-        //  console.log(single);
-        // const newsContainer = document.getElementById('news-container');
+       
 
-        const newsDiv = document.createElement('div');
-        newsDiv.classList.add('col');
-        txt2 = cnt.toString();
+        const news_Div = document.createElement('div');
+        news_Div.classList.add('col');
+        txt2 = c.toString();
         let result = txt1.concat(txt2);
-        newsDiv.innerHTML = `
+        news_Div.innerHTML = `
         
    <div class="col-12 col-lg-12 col-sm-12">
         <div class="card">
               <div class="row">
                  <div class="col-lg-5 col-sm-12">
-                  <img src="${single.thumbnail_url}" class="card-img-top img-fluid" alt="...">
+                  <img src="${individual.thumbnail_url}" class="card-img-top img-fluid" alt="...">
                   </div>
                     <div class="col-lg-7 col-sm-12">
                         <div class="card-body">
-                            <h5 class="card-title fs-2 fw-bold mt-5">${single.title}</h5>
-                            <p class="card-text fs-4 text-secondary mt-5">${single.details}</p>
+                            <h5 class="card-title fs-2 fw-bold mt-5">${individual.title}</h5>
+                            <p class="card-text fs-4 text-secondary mt-5">${individual.details}</p>
                             <div class="d-flex mt-5">
-                                <img style="width:5%; height:10%;border-radius: 50%;" src="${single.author.img}" alt=" ...">
+                                <img style="width:5%; height:10%;border-radius: 50%;" src="${individual.author.img}" alt=" ...">
                                 <div>
-                                    <h4 class="fw-bold"> ${single.author.name ? single.author.name : 'No Author found'}</h4>
-                                    <p class="text-secondary">  ${single.author.published_date ? single.author.published_date.substring(0, 10) : 'No date'}</p >
+                                    <h4 class="fw-bold"> ${individual.author.name ? individual.author.name : 'No Author found'}</h4>
+                                    <p class="text-secondary">  ${individual.author.published_date ? individual.author.published_date.substring(0, 10) : 'No date'}</p >
                                 </div >
                                 <div class="p-5"> <i
-                                        class="fa-regular fa-eye fs-5 ">${single.rating.number}</i></div>
+                                        class="fa-regular fa-eye fs-5 ">${individual.rating.number}</i></div>
                                 <div class="p-5 d-flex">
                                     <i class="fa-regular fa-star-half-stroke"></i>
                                     <i class="fa-regular fa-star"></i>
@@ -87,7 +84,7 @@ const displaynews = news => {
                                     <i class="fa-regular fa-star"></i>
                                     <i class="fa-regular fa-star"></i>
                                 </div> 
-                            <button onclick="loadnewsDetails('${single._id}')"href="#" class="btn btn-primary w-50 h-25 px-2 py-3" data-bs-toggle="modal" data-bs-target="#phoneDetailModal">Show Details</button>
+                            <button onclick="loadnewsDetails('${individual._id}')"href="#" class="btn btn-primary w-50 h-25 px-2 py-3" data-bs-toggle="modal" data-bs-target="#phoneDetailModal">Show Details</button>
                             </div >
                         </div >
                     </div >
@@ -96,22 +93,26 @@ const displaynews = news => {
        </div >
     `;
         i++;
-        newsContainer.appendChild(newsDiv);
+
+        newsContainer.appendChild(news_Div);
 
     })
 
-    // stop spinner or loader
+
+    // stop spinner
     toggleSpinner(false);
 }
 
-// loadnews for default news category
+
 
 loadnews("01");
 
 
 
-// loading-individual-news-details
 
+
+
+// loading each news-details
 
 const loadnewsDetails = async (id) => {
     console.log(id);
@@ -123,14 +124,14 @@ const loadnewsDetails = async (id) => {
 };
 
 
-// displaying-individual-news-details
+// displaying news details
 
 const displaynewsDetails = (modals) => {
     console.log(modals);
     console.log(modals[0].title);
-    const modalTitle = document.getElementById("phoneDetailModalLabel");
+    const modalTitle = document.getElementById("pModal");
     modalTitle.innerText = modals[0].title;
-    const phoneDetails = document.getElementById('phone-details');
+    const phoneDetails = document.getElementById('pdetails');
     phoneDetails.innerHTML = `
     <img src="${modals[0].thumbnail_url}" class="card-img-top img-fluid" alt="...">
     <p class ="mt-5"> <span class ="fw-bold fs-5"> Details : </span> ${modals[0].details ? modals[0].details : 'No details Found'}</p>
