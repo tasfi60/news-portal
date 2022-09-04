@@ -1,9 +1,5 @@
 const loadnews = async (id) => {
-    // console.log(id);
     const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
-
-    // console.log(url);
-    // fetch('https://openapi.programming-hero.com/api/news/category/01')
     fetch(url)
         .then(res => res.json())
         .then(data => displaynews(data.data))
@@ -11,25 +7,14 @@ const loadnews = async (id) => {
 }
 
 
-// const list = [];
-// const totalNews = document.getElementById("total-news");
-// totalNews.innerText = list.length;
+
 
 
 const displaynews = news => {
     console.log(news);
-    const totalNews = document.getElementById("total-news");
+    const totalNews = document.getElementById("all-news");
     totalNews.innerText = news.length;
-    // const totalNews = news.length;
-    //console.log(news.data);
-    // console.log(news[0].author.name);
-    // console.log(news[0].author.img);
-
-    // console.log(news[0].thumbnail_url);
-    // console.log(news[0].rating.number);
-    // console.log(news[0].title);
-    // console.log(news[0].details);
-    const newsContainer = document.getElementById('news-container');
+    const newsContainer = document.getElementById('all news-container');
 
     newsContainer.innerHTML = ``;
 
@@ -38,8 +23,6 @@ const displaynews = news => {
         let i = 0;
         let txt1 = "0";
         let cnt = 1;
-        //  console.log(single);
-        // const newsContainer = document.getElementById('news-container');
         const newsDiv = document.createElement('div');
         newsDiv.classList.add('col');
         txt2 = cnt.toString();
@@ -71,7 +54,7 @@ const displaynews = news => {
                                     <i class="fa-regular fa-star"></i>
                                     <i class="fa-regular fa-star"></i>
                                 </div> 
-                            <button onclick="loadModal('${single._id}')"href="#" class="btn btn-primary w-50 h-25 px-2 py-3" data-bs-toggle="modal" data-bs-target="#phoneDetailModal">Show Details</button>
+                            <button onclick="loadModal('${single._id}')"href="#" class="btn btn-primary w-50 h-25 px-2 py-3" data-bs-toggle="modal" data-bs-target="#pModal">Show Details</button>
                             </div >
                         </div >
                     </div >
@@ -104,9 +87,9 @@ const loadModal = async (id) => {
 const displaynewsDetails = (modals) => {
     console.log(modals);
     console.log(modals[0].title);
-    const modalTitle = document.getElementById("phoneDetailModalLabel");
+    const modalTitle = document.getElementById("pModalLabel");
     modalTitle.innerText = modals[0].title;
-    const phoneDetails = document.getElementById('phone-details');
+    const phoneDetails = document.getElementById('pdetails');
     phoneDetails.innerHTML = `
     <img src="${modals[0].thumbnail_url}" class="card-img-top img-fluid" alt="...">
     <p class ="mt-5"> <span class ="fw-bold fs-5"> Details : </span> ${modals[0].details ? modals[0].details : 'No details Found'}</p>
@@ -115,13 +98,3 @@ const displaynewsDetails = (modals) => {
     //  modalTitle.innerText = modals.title;
 };
 
-// const displaynewsDetails = news => {
-//     console.log(news.author.name);
-//     const modalTitle = document.getElementById('phoneDetailModalLabel');
-//     modalTitle.innerText = news.name;
-//     const phoneDetails = document.getElementById('phone-details');
-//     //console.log(phone.author.name);
-//     phoneDetails.innerHTML = `
-//         <p>Release Date: ${news.author.name ? phone.author.name : 'No Release Date Found'}</p>
-//     `
-// }

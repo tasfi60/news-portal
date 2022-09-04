@@ -12,7 +12,7 @@ const displayCategories = categories => {
     const newsName = document.getElementById("news-name");
     newsName.innerHTML = `${categories[cnt1].category_name}`;
 
-    const categoriesContainer = document.getElementById('categories-container');
+    const categoriesContainer = document.getElementById('categories');
     let txt1 = "0";
     let cnt = 1;
 
